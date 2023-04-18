@@ -41,7 +41,7 @@ controlador.createPessoa = (req,res)=>{
     const novaPessoa = req.body
     novaPessoa.id = indice + 1
     lista.push(novaPessoa)
-    res.status(200).redirect("/pessoas")
+    res.status(200).redirect("/")
 }
 
 controlador.updatePessoa = (req,res)=>{

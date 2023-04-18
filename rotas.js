@@ -1,17 +1,11 @@
 const express = require("express")
-const routes = require("../controlador")
+const controlador = require("./controlador")
 
-routes.get("/pessoas",controlador.getAllPessoas)
-routes.get("/pessoas/:id",controlador.getPessoaById)
-routes.post("/pessoas",controlador.createPessoa)
-routes.put("/pessoas/:id",controlador.updatePessoa)
-routes.delete("/pessoas/:id",controlador.deletePessoa)
-//routes.get("/",(req,res)=>{
-//    res.status(200).json(lista);
-//});    
-//
-//routes.get("/:id",(req,res)=>{
-//    res.status(200).json(lista[req.params.id-1]);
-//});
+const routes = express.Router()
+routes.get("/",controlador.getAllPessoas)
+routes.get("/:id",controlador.getPessoaById)
+routes.post("/",controlador.createPessoa)
+routes.put("/:id",controlador.updatePessoa)
+routes.delete("/:id",controlador.deletePessoa)
 
 module.exports = routes
